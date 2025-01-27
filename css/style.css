@@ -7,6 +7,7 @@
     --txt-align : center;
     --clr-black : black;
     --clr-grey : rgba(241, 234, 234, 0.151);
+    --header-height : 4.1rem;
 }
 body, html {
     padding: 0;
@@ -36,22 +37,25 @@ header {
 main {
     .rel {
         position: relative;
-        top : 68px;
-        left: 0;
-        right: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        margin-top: var(--header-height);
+        overflow: hidden;
         img {
             width: 100%;
-            height: 95vh;
-        }
-        .absolu {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            background-color:  rgba(37, 37, 28, 0.534);
-            text-align: var(--txt-align);
-        }
+            top: 0;
+            left : 0;
+            width: 100%;
+            height: 100%;
+        }        
+    }
+    .absolu {
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--clr-grey);
     }
     .lorem {
         margin-top : 80px;
